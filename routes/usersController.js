@@ -1,6 +1,6 @@
 // Imports
 const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const jwtUtils =  require('../utils/jwt.utils')
 const models = require('../models')
 
 // User Routes
@@ -69,8 +69,9 @@ module.exports = {
                 bcrypt.compare(password,userFound.password, function(errBcrypt, resBcrypt){
                     if(resBcrypt){
                         return res.status(200).json({
-                            'userId': newUser.id,
-                            'token': 'THE TOKEN'
+                            'userId': userFound.id,
+                            // 'token': 'THE TOKEN'
+                            'token': jwtUtils.generateTokenForUser(userFound)
                         })
                     }else{
                         return res.status(500).json({'error': "identifiants incorrects!!"})
