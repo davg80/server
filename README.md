@@ -71,3 +71,16 @@ sequelize model:create --attributes "title:string content:string attachment:stri
 ```
 sequelize db:migrate
 ```
+
+## Install jwt (token)
+```
+npm install jsonwebtoken --save
+```
+## Install bcrypt
+```
+npm install bcrypt --save
+```
+## Install body-parser
+```
+npm install body-parser --save
+```
