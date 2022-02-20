@@ -72,6 +72,8 @@ sequelize model:create --attributes "title:string content:string attachment:stri
 sequelize db:migrate
 ```
 
+# User authenticator
+
 ## Install jwt (token)
 ```
 npm install jsonwebtoken --save

@@ -1,6 +1,7 @@
 //Imports
 const express = require('express')
 const bodyparser = require('body-parser')
+const apiRouter = require('./apiRouter').router
 
 // Instantiate server
 const server = express()
@@ -14,6 +15,7 @@ server.get('/', function(req, res) {
     res.status(200).send('<h1>Bienvenue sur mon super server</h1>')
 });
 
+server.use('/api/', apiRouter)
 
 
 // launch server
